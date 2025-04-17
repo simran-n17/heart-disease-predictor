@@ -54,3 +54,13 @@ print("📊 Accuracy on test set:", accuracy)
 # Save model and scaler
 pickle.dump((model, scaler), open('model.pkl', 'wb'))
 print("✅ Model trained and saved as model.pkl")
+
+from sklearn.metrics import accuracy_score
+
+# Predict on the test set
+y_pred = model.predict(X_test)
+
+# Calculate accuracy
+accuracy = accuracy_score(y_test, y_pred)
+print(f"✅ Accuracy of the model: {accuracy:.2f}")
+
